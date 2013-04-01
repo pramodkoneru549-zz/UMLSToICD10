@@ -87,7 +87,7 @@ public class OntologyLoader {
 	 * 
 	 * NOTE We are storing SPARQL query as an annotation into comments in our
 	 *      Ontology.
-	 * @return
+	 * @return {@link String} SPARQL query
 	 */
 	public String getSparqlQueryFromComment(OWLClass clazz){
 		OWLLiteral sparqlQueryLiteral = null;
