@@ -106,6 +106,14 @@ public class OntologyLoader {
 		return sparqlQuery;
 	}
 	
+	/**
+	 * This method retrieves the condition that should be checked for the SPARQL query.
+	 * 
+	 * NOTE Here we are storing it as 'isDefinedBy' annotation with boolean type in the
+	 *      Ontology
+	 * @param clazz
+	 * @return {@link Boolean} condition that the SPARQL query should conform to
+	 */
 	public Boolean getBooleanConditionForSparqlQuery(OWLClass clazz){
 		Boolean flag = false;
 		if(ontology.containsClassInSignature(clazz.getIRI())){
