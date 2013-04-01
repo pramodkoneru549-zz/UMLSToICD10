@@ -5,7 +5,6 @@ import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.knoesis.ulmstoicd10.utils.ConfigManager;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
@@ -52,7 +51,6 @@ public class OntologyLoader {
 	 */
 	public OntologyLoader(File ontologyFile){
 		OWLReasonerFactory reasonerFactory = new PelletReasonerFactory();
-		ConfigManager configParams = new ConfigManager();
 		/*Loading the ontology*/
 		manager = OWLManager.createOWLOntologyManager();
 		try {
@@ -109,14 +107,14 @@ public class OntologyLoader {
 	}
 	
 	public Boolean getBooleanConditionForSparqlQuery(OWLClass clazz){
-		Boolean flag;
-		String sparqlQuery = null;
+		Boolean flag = false;
 		if(ontology.containsClassInSignature(clazz.getIRI())){
 			Set<OWLAnnotation> annotations = clazz.getAnnotations(ontology, isDefinedBy);
 			if(!annotations.isEmpty())
 				for(OWLAnnotation annotation : annotations){
-					flag = annotation.getValue();
-					sparqlQuery = sparqlQueryLiteral.getLiteral();
+					OWLLiteral booleanLiteral = (OWLLiteral) annotation.getValue();
+					String booleanValue = booleanLiteral.getLiteral();
+					flag = Boolean.valueOf(booleanValue);
 				}
 			else
 				log.error("Please check the class there is no comments annotation");
@@ -157,6 +155,6 @@ public class OntologyLoader {
 		File ontologyFile = new File("data/ICD10Initial.owl");
 		OntologyLoader ontoLoader = new OntologyLoader(ontologyFile);
 //		System.out.println(ontoLoader.getSubClasses("E08"));
-		System.out.println(ontoLoader.getSparqlQueryFromComment(ontoLoader.getClass("E08.1")));
+		System.out.println(ontoLoader.getBooleanConditionForSparqlQuery(ontoLoader.getClass("E08.0")));
 	}
 }
