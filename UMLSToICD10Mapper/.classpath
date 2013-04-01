@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi343src.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-api-3.4.3-sources.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-api-3.4.3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-apibinding-3.4.3-sources.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-apibinding-3.4.3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-contract-3.4.3-sources.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-contract-3.4.3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-impl-3.4.3-sources.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-impl-3.4.3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-parsers-3.4.3-sources.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-parsers-3.4.3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-tools-3.4.3-sources.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-tools-3.4.3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/aterm-java-1.6.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-cli.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-core.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-datatypes.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-dig.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-el.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-explanation.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-jena.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-modularity.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-owlapi.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-owlapiv3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-pellint.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-query.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-rules.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/pellet-test.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/servlet.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/jgrapht-jdk1.5-0.7.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
