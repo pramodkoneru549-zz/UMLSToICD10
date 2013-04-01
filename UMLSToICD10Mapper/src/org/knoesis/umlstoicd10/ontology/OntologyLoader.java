@@ -125,7 +125,7 @@ public class OntologyLoader {
 					flag = Boolean.valueOf(booleanValue);
 				}
 			else
-				log.error("Please check the class there is no comments annotation");
+				log.error("Please check the class there is no 'isDefinedBy' annotation");
 		} else
 			log.error("No such class in this ontology -- Please check");
 		return flag;
