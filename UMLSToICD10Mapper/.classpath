@@ -33,5 +33,12 @@
 	<classpathentry kind="lib" path="owl-api-lib/servlet.jar"/>
 	<classpathentry kind="lib" path="owl-api-lib/jgrapht-jdk1.5-0.7.3.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/virt_jena.jar"/>
+	<classpathentry kind="lib" path="lib/virtjdbc3.jar"/>
+	<classpathentry kind="lib" path="lib/jena-2.5.5.jar"/>
+	<classpathentry kind="lib" path="lib/arq-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/iri-0.7.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl-2.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/axis.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
