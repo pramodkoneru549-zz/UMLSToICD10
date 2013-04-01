@@ -130,6 +130,9 @@ public class OntologyLoader {
 			log.error("No such class in this ontology -- Please check");
 		return flag;
 	}
+	
+	
+	
 	/**
 	 * This method just returns the class for a given string.
 	 * @param className
