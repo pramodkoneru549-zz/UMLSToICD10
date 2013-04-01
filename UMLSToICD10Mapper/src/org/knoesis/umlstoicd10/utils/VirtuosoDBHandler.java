@@ -43,6 +43,7 @@ public class VirtuosoDBHandler {
 	public boolean checkQueryPattern(String askQuery){
 		Boolean status = false;
 		Query sparql = QueryFactory.create(askQuery);
+		System.out.println(sparql.toString());
 		VirtuosoQueryExecution queryExecutor = VirtuosoQueryExecutionFactory.create(sparql, graphConnection);
 		status = queryExecutor.execAsk();
 		return status;

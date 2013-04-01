@@ -20,7 +20,11 @@ public class ConfigManager {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public String getOntologyFileLocation(){
+		return propertiesFileFolder + "/" + getOntologyName();
+	}
+	
 	public String getOntologyName(){
 		return prop.getProperty("ontology.name");
 	}

@@ -155,7 +155,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
-        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://ww.knoesis.org/icd10mapping/patient&gt; &lt;http://ww.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://ww.knoesis.org/icd10mapping/umls/c03&gt;.}</rdfs:comment>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c03&gt;.}</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     

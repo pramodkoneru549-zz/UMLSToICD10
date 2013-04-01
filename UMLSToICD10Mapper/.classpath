@@ -40,5 +40,6 @@
 	<classpathentry kind="lib" path="lib/iri-0.7.jar"/>
 	<classpathentry kind="lib" path="lib/xercesImpl-2.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/axis.jar"/>
+	<classpathentry kind="lib" path="lib/icu4j.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
