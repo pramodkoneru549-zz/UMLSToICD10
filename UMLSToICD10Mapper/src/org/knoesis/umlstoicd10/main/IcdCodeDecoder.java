@@ -3,13 +3,18 @@ package org.knoesis.umlstoicd10.main;
 import java.io.File;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.knoesis.umlstoicd10.ontology.OntologyLoader;
 import org.knoesis.umlstoicd10.utils.ConfigManager;
 import org.knoesis.umlstoicd10.utils.VirtuosoDBHandler;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.reasoner.Node;
+import org.semanticweb.owlapi.reasoner.NodeSet;
 
 /**
- * This class is used to decode the icd10 codes 
+ * This class is used to decode the icd10 codes.
+ * 
  * @author koneru
  *
  */
@@ -19,6 +24,7 @@ public class IcdCodeDecoder {
 	ConfigManager configParams;
 	OntologyLoader ontology;
 	VirtuosoDBHandler dbHandler;
+	private static Log log = LogFactory.getLog(IcdCodeDecoder.class);
 	
 	/** Constructor intializes ontology loader and dbHandler*/
 	public IcdCodeDecoder() {
@@ -30,9 +36,8 @@ public class IcdCodeDecoder {
 	
 	public void process(String strtCode){
 		OWLClass owlClazz = ontology.getClass(strtCode);
-		String sparqlQuery = ontology.getSparqlQueryFromComment(owlClazz);
-		boolean checkStatus = dbHandler.checkQueryPattern(sparqlQuery);
-		System.out.println(checkStatus);
+		getICD10Codes(strtCode);
+//		System.out.println(satisfiedClassCond(owlClazz));
 	}
 	
 	/**
@@ -57,6 +62,34 @@ public class IcdCodeDecoder {
 		
 		return conditionsSatisfied;
 	}
+	
+	public void getICD10Codes(String startingClassCode){
+		
+		/* GETTING THE CLASS FROM STRING*/
+		OWLClass strtClazz = ontology.getClass(startingClassCode);
+		Boolean startClsCond = satisfiedClassCond(strtClazz);
+		OWLClass icdCodeClass = strtClazz;
+		if(startClsCond){
+			/* Checking if it is the leaf node*/
+			while(!ontology.isLeafNode(icdCodeClass)){
+				NodeSet<OWLClass> subClz = ontology.getSubClasses(strtClazz);
+				for(Node<OWLClass> node : subClz){
+					OWLClass clz = node.getRepresentativeElement();
+					if(satisfiedClassCond(clz))
+					{
+						icdCodeClass = clz;
+						break;
+					}
+				}
+				/* This means that it has checked all the subclasses and none of them satisfies the cond*/
+				if(strtClazz.equals(icdCodeClass))
+					break;
+				else
+					System.out.println("This the icdcode for this class: " + icdCodeClass.toString());
+			}
+		}
+	}
+	
 	public List<String> getPossibleIcdCodes() {
 		return possibleIcdCodes;
 	}

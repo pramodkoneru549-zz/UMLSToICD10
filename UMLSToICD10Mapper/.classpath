@@ -4,7 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="owl-api-lib/owlapi343src.jar"/>
 	<classpathentry kind="lib" path="owl-api-lib/owlapi-api-3.4.3-sources.jar"/>
-	<classpathentry kind="lib" path="owl-api-lib/owlapi-api-3.4.3.jar"/>
+	<classpathentry kind="lib" path="owl-api-lib/owlapi-api-3.4.3.jar" sourcepath="/home/koneru/.m2/repository/net/sourceforge/owlapi/owlapi-api/3.4.3/owlapi-api-3.4.3-sources.jar"/>
 	<classpathentry kind="lib" path="owl-api-lib/owlapi-apibinding-3.4.3-sources.jar"/>
 	<classpathentry kind="lib" path="owl-api-lib/owlapi-apibinding-3.4.3.jar"/>
 	<classpathentry kind="lib" path="owl-api-lib/owlapi-contract-3.4.3-sources.jar"/>

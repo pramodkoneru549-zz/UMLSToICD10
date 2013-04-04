@@ -16,6 +16,7 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.InferenceType;
+import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
@@ -82,6 +83,17 @@ public class OntologyLoader {
 	}
 	
 	/**
+	 * This is just an overloaded method of above -- here we pass OWLClass instead 
+	 * @param startingClass
+	 * @return
+	 */
+	public NodeSet<OWLClass> getSubClasses(OWLClass startingClass){
+		NodeSet<OWLClass> subClasses = null;
+		subClasses = reasoner.getSubClasses(startingClass, true);
+		return subClasses;
+	}
+	
+	/**
 	 * This method retrieves the SPARQL query, for a given class, from its
 	 * comments.
 	 * 
@@ -131,7 +143,16 @@ public class OntologyLoader {
 		return flag;
 	}
 	
-	
+	/**
+	 * This method returns boolean value of whether a class is leaf node or not.
+	 * @param clazz
+	 * @return {@link Boolean} whether the class is leaf node or not
+	 * 
+	 * FIXME @pramod I think this is not the right way to do this -- CHECK IT OUT.
+	 */
+	public Boolean isLeafNode(OWLClass clazz){
+		return clazz.getSubClasses(ontology).size() == 0 ? true : false;
+	}
 	
 	/**
 	 * This method just returns the class for a given string.
@@ -166,6 +187,8 @@ public class OntologyLoader {
 		File ontologyFile = new File("data/ICD10Initial.owl");
 		OntologyLoader ontoLoader = new OntologyLoader(ontologyFile);
 //		System.out.println(ontoLoader.getSubClasses("E08"));
-		System.out.println(ontoLoader.getBooleanConditionForSparqlQuery(ontoLoader.getClass("E08.0")));
+//		System.out.println(ontoLoader.getBooleanConditionForSparqlQuery(ontoLoader.getClass("E08.0")));
+		System.out.println(ontoLoader.isLeafNode(ontoLoader.getClass("E08.1")));
+//		ontoLoader.isLeafNode(ontoLoader.getClass("E08.00"));
 	}
 }

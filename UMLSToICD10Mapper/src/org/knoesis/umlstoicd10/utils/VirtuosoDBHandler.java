@@ -1,6 +1,8 @@
 package org.knoesis.umlstoicd10.utils;
 
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.knoesis.umlstoicd10.models.Triple;
 
 import com.hp.hpl.jena.graph.Node;
@@ -17,6 +19,7 @@ public class VirtuosoDBHandler {
 	String virtuosoJdbcUrl;
 	String rdfGraphUrl;
 	private VirtGraph graphConnection;
+	private static Log log = LogFactory.getLog(VirtuosoDBHandler.class);
 	
 	public VirtGraph getGraphConnection() {
 		return graphConnection;
@@ -43,7 +46,7 @@ public class VirtuosoDBHandler {
 	public boolean checkQueryPattern(String askQuery){
 		Boolean status = false;
 		Query sparql = QueryFactory.create(askQuery);
-		System.out.println(sparql.toString());
+		log.info(sparql.toString());
 		VirtuosoQueryExecution queryExecutor = VirtuosoQueryExecutionFactory.create(sparql, graphConnection);
 		status = queryExecutor.execAsk();
 		return status;
@@ -66,9 +69,10 @@ public class VirtuosoDBHandler {
 //		<http://ww.knoesis.org/icd10mapping/patient> <http://ww.knoesis.org/icd10mapping/suffering_with> <http://ww.knoesis.org/icd10mapping/umls/c03>
 		String sub = "http://www.knoesis.org/icd10mapping/patient";
 		String pre = "http://www.knoesis.org/icd10mapping/suffering_with";
-		String obj = "http://www.knoesis.org/icd10mapping/umls/c03";
+		String obj = "http://www.knoesis.org/icd10mapping/umls/c05";
 		Triple triple = new Triple(sub, pre, obj);
 		dbHandler.addTripleIntoVirtuoso(triple);
+		System.out.println("Triple "+ triple+ " added");
 		
 	}
 }
