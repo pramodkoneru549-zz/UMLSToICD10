@@ -44,8 +44,15 @@ public class ConfigManager {
 	public String getRdfGraphUrl() {
 		return prop.getProperty("virtuoso.rdfGraph");
 	}
+	
+	public String getInMemoryGraphName(){
+		return prop.getProperty("inmemory.graphname");
+	}
 
-
+	public String getTripleFileLocation(){
+		return prop.getProperty("inmemory.tripleFile");
+	}
+	
 	public static void main(String[] args) {
 		ConfigManager manager =  new ConfigManager();
 		System.out.println(manager.getOntologyName());
