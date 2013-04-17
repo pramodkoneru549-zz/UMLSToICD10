@@ -114,25 +114,6 @@
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#E08 -->
 
     <owl:Class rdf:about="&ICD10Initial;E08">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ICD10Initial;hasCondition"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&ICD10Initial;C0011849"/>
-                            <owl:Class>
-                                <owl:complementOf rdf:resource="&ICD10Initial;Gestational_Diabetes"/>
-                            </owl:Class>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="&ICD10Initial;dueTo"/>
-                                <owl:someValuesFrom rdf:resource="&ICD10Initial;C0010481"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://ww.knoesis.org/icd10mapping/umls/c01&gt;.
 &lt;http://ww.knoesis.org/icd10mapping/umls/c01&gt; &lt;http://www.knoesis.org/icd10mapping/due_to&gt; &lt;http://ww.knoesis.org/icd10mapping/umls/c02&gt;.}</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
@@ -143,19 +124,8 @@
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#E08.0 -->
 
     <owl:Class rdf:about="&ICD10Initial;E08.0">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ICD10Initial;E08"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ICD10Initial;hasCondition"/>
-                        <owl:someValuesFrom rdf:resource="&ICD10Initial;Hyperosmolarity"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
-        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c03&gt;.}</rdfs:comment>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0259752&gt;.}</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
@@ -165,8 +135,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.00">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.0"/>
-        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK {&lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c07&gt;.}</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK {&lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0020457&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -186,7 +156,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.0"/>
-        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK {&lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c05&gt;.}</rdfs:comment>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK {&lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0009421&gt;.}</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
@@ -196,6 +166,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.1">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0220982&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -204,6 +176,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.10">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.1"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0009421&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -212,6 +186,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.11">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.1"/>
+        <rdfs:isDefinedBy rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0009421&gt;.}</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -220,6 +196,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.2">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0022658&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -228,6 +206,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.21">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.2"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011881&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -236,6 +216,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.22">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.2"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011881&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -244,6 +226,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.29">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.2"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0022658&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -252,6 +236,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.3">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0015397&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -260,6 +246,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.31">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011884&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -268,6 +256,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.311">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.31"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -276,6 +266,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.319">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.31"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -284,6 +276,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.32">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c1561894&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -292,6 +286,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.321">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.32"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -300,6 +296,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.329">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.32"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -308,6 +306,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.33">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0730277&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -316,6 +316,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.331">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.33"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -324,6 +326,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.339">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.33"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -332,6 +336,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.34">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0730278&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -340,6 +346,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.341">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.34"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -348,6 +356,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.349">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.34"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -356,6 +366,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.35">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0154830&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -364,6 +376,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.351">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.35"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -372,6 +386,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.359">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.35"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271051&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -380,6 +396,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.36">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011876&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -388,6 +406,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.39">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0015397&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -396,6 +416,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.4">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
+        <rdfs:isDefinedBy rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0027765&gt;.}</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -404,6 +426,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.40">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.4"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011882&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -412,6 +436,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.41">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.4"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271678&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -420,6 +446,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.42">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.4"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271680&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -428,6 +456,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.43">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.4"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271686&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -436,6 +466,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.44">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.4"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0271686&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -444,6 +476,7 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.49">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.4"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;boolean">true</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -452,6 +485,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.5">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0728936&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -460,6 +495,9 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.51">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.5"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011871&gt;.
+&lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0017086&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -468,6 +506,9 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.52">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.5"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011871&gt;.
+&lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0017086&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -476,6 +517,7 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.59">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.5"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;boolean">true</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -484,6 +526,7 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.6">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;boolean">true</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -492,6 +535,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.61">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.6"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0022408&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -500,6 +545,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.610">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.61"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0003892&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -508,6 +555,7 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.618">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.61"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;boolean">true</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -516,6 +564,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.62">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.6"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0037274&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -524,6 +574,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.620">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.62"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011603&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -532,6 +584,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.621">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.62"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0085119&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -540,6 +594,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.622">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.62"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0037299&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -548,6 +604,7 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.628">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.62"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;boolean">true</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -556,6 +613,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.63">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.6"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0026636&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -564,6 +623,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.630">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.63"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0031090&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -572,6 +633,7 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.638">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.63"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;boolean">true</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -580,6 +642,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.64">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.6"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0020615&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -588,6 +652,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.641">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.64"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0009421&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -596,6 +662,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.649">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.64"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0009421&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -604,6 +672,8 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.65">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.6"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0020615&gt;.}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -612,22 +682,7 @@
 
     <owl:Class rdf:about="&ICD10Initial;E08.69">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.6"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#E08.8 -->
-
-    <owl:Class rdf:about="&ICD10Initial;E08.8">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#E08.9 -->
-
-    <owl:Class rdf:about="&ICD10Initial;E08.9">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
+        <rdfs:seeAlso rdf:datatype="&xsd;boolean">true</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -1273,7 +1328,6 @@
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#e08.8 -->
 
     <owl:Thing rdf:about="&ICD10Initial;e08.8">
-        <rdf:type rdf:resource="&ICD10Initial;E08.8"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
@@ -1282,7 +1336,6 @@
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#e08.9 -->
 
     <owl:Thing rdf:about="&ICD10Initial;e08.9">
-        <rdf:type rdf:resource="&ICD10Initial;E08.9"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
