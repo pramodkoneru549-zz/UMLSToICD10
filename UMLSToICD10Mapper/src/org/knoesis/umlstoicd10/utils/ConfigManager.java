@@ -53,6 +53,14 @@ public class ConfigManager {
 		return prop.getProperty("inmemory.tripleFile");
 	}
 	
+	public String getVirtusoUmlsJdbcUrl(){
+		return prop.getProperty("virtuoso.umlsontology.jdbc");
+	}
+	
+	public String getVirtuosoUmlsOntologyGraph(){
+		return prop.getProperty("virtuoso.umlsontology.graph");
+	}
+	
 	public static void main(String[] args) {
 		ConfigManager manager =  new ConfigManager();
 		System.out.println(manager.getOntologyName());
