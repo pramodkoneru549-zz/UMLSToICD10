@@ -8,6 +8,8 @@ import org.knoesis.umlstoicd10.models.Triple;
 import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.query.ResultSetFormatter;
 
 import virtuoso.jena.driver.VirtGraph;
 import virtuoso.jena.driver.VirtuosoQueryExecution;
@@ -31,11 +33,15 @@ public class VirtuosoDBHandler {
 
 	public VirtuosoDBHandler() {
 		configParams = new ConfigManager();
-		virtuosoJdbcUrl = configParams.getVirtuosoJdbcUrl();
-		username = configParams.getVirtuosoUsername();
-		password = configParams.getVirtuosoPassword();
-		rdfGraphUrl = configParams.getRdfGraphUrl();
-		graphConnection = new VirtGraph (rdfGraphUrl,virtuosoJdbcUrl, username, password);
+//		virtuosoJdbcUrl = configParams.getVirtuosoJdbcUrl();
+		virtuosoJdbcUrl = configParams.getVirtusoUmlsJdbcUrl();
+//		username = configParams.getVirtuosoUsername();
+//		password = configParams.getVirtuosoPassword();
+//		rdfGraphUrl = configParams.getRdfGraphUrl();
+		username = configParams.getVirtuosoUmlsUsername();
+		password = configParams.getVirtuosoUmlsPassword();
+//		rdfGraphUrl = configParams.getVirtuosoUmlsOntologyGraph();
+		graphConnection = new VirtGraph (virtuosoJdbcUrl, username, password);
 	}
 	
 	/**
@@ -69,10 +75,35 @@ public class VirtuosoDBHandler {
 //		<http://ww.knoesis.org/icd10mapping/patient> <http://ww.knoesis.org/icd10mapping/suffering_with> <http://ww.knoesis.org/icd10mapping/umls/c03>
 		String sub = "http://www.knoesis.org/icd10mapping/patient";
 		String pre = "http://www.knoesis.org/icd10mapping/suffering_with";
-		String obj = "http://www.knoesis.org/icd10mapping/umls/c05";
-		Triple triple = new Triple(sub, pre, obj);
-		dbHandler.addTripleIntoVirtuoso(triple);
-		System.out.println("Triple "+ triple+ " added");
+		String obj = "http://www.ezdi.us/cardio.owl#C1720567";
 		
+		String askQuery = "PREFIX icd: <http://www.knoesis.org/icd10mapping/>"+
+						  "PREFIX ezdi: <http://www.ezdi.us/cardio.owl#>"+
+						  "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"+
+						  "ASK " +
+						  "FROM NAMED <http://knoesis.wright.edu/healthcare>"+
+						  "FROM NAMED <http://knoesis.wright.edu/umls2icd10/sample>"+
+						  "{"+
+						  "{GRAPH <http://knoesis.wright.edu/healthcare> {?x rdfs:subClassOf ezdi:C0020617.}}"+
+						  "{GRAPH <http://knoesis.wright.edu/umls2icd10/sample> {"+
+						  "{icd:patient icd:suffering_with ?x.}"+
+						   "UNION"+
+						  "{icd:patient icd:suffering_with ezdi:C0020617.}}"+
+						   "}"+
+						   "UNION"+
+						  "{GRAPH <http://knoesis.wright.edu/umls2icd10/sample> {"+
+						  "{icd:patient icd:suffering_with ?x.}"+
+						  "UNION"+
+						  "{icd:patient icd:suffering_with ezdi:C0020617.}}"+
+						"}"+
+				"}";
+		
+		String testQuery = "PREFIX icd: <http://www.knoesis.org/icd10mapping/>"+
+						   "PREFIX ezdi: <http://www.ezdi.us/cardio.owl#>"+
+						   "SELECT * FROM NAMED <http://knoesis.wright.edu/umls2icd10/sample> { GRAPH <http://knoesis.wright.edu/umls2icd10/sample> {?x icd:suffering_with ezdi:C0259752.}}";	
+//		Triple triple = new Triple(sub, pre, obj);
+//		dbHandler.addTripleIntoVirtuoso(triple);
+//		System.out.println("Triple "+ triple+ " added");
+		System.out.println(dbHandler.checkQueryPattern(askQuery));
 	}
 }

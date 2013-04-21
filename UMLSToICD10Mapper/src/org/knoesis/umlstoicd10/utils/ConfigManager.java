@@ -61,6 +61,14 @@ public class ConfigManager {
 		return prop.getProperty("virtuoso.umlsontology.graph");
 	}
 	
+	public String getVirtuosoUmlsUsername(){
+		return prop.getProperty("virtuoso.umls.username");
+	}
+	
+	public String getVirtuosoUmlsPassword(){
+		return prop.getProperty("virtuoso.umls.password");
+	}
+	
 	public static void main(String[] args) {
 		ConfigManager manager =  new ConfigManager();
 		System.out.println(manager.getOntologyName());
