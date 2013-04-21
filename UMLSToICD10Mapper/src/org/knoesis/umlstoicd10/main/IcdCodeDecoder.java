@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.knoesis.umlstoicd10.db.VirtuosoDBHandler;
 import org.knoesis.umlstoicd10.ontology.OntologyLoader;
 import org.knoesis.umlstoicd10.utils.ConfigManager;
-import org.knoesis.umlstoicd10.utils.VirtuosoDBHandler;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -26,7 +26,7 @@ public class IcdCodeDecoder {
 	VirtuosoDBHandler dbHandler;
 	private static Log log = LogFactory.getLog(IcdCodeDecoder.class);
 	
-	/** Constructor intializes ontology loader and dbHandler*/
+	/** DEFAULT Constructor intializes ontology loader and dbHandler*/
 	public IcdCodeDecoder() {
 		configParams = new ConfigManager();
 		File ontologyFile = new File(configParams.getOntologyFileLocation());

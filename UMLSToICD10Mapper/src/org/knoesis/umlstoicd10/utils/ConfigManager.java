@@ -41,7 +41,7 @@ public class ConfigManager {
 		return prop.getProperty("virtuoso.password");
 	}
 
-	public String getRdfGraphUrl() {
+	public String getPatientGraphUrl() {
 		return prop.getProperty("virtuoso.rdfGraph");
 	}
 	
@@ -50,7 +50,7 @@ public class ConfigManager {
 	}
 
 	public String getTripleFileLocation(){
-		return prop.getProperty("inmemory.tripleFile");
+		return prop.getProperty("triplesFile");
 	}
 	
 	public String getVirtusoUmlsJdbcUrl(){
