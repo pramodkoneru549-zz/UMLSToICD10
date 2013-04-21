@@ -35,7 +35,6 @@ public class IcdCodeDecoder {
 	}
 	
 	public void process(String strtCode){
-		OWLClass owlClazz = ontology.getClass(strtCode);
 		getICD10Codes(strtCode);
 //		System.out.println(satisfiedClassCond(owlClazz));
 	}

@@ -17,9 +17,6 @@ import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
-import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.rdf.model.RDFNode;
 
 import de.fuberlin.wiwiss.ng4j.NamedGraph;
 import de.fuberlin.wiwiss.ng4j.NamedGraphSet;
@@ -30,6 +27,7 @@ import de.fuberlin.wiwiss.ng4j.sparql.NamedGraphDataset;
  * This class is used for in memory graph storage
  * 
  * NOTE Using NG4J API for this http://wifo5-03.informatik.uni-mannheim.de/bizer/ng4j/
+ * NOTE Not using this as of now -- Need to look into if we are implementing for production env
  * @author koneru
  *
  */

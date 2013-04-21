@@ -48,10 +48,11 @@ public class VirtuosoDBHandler {
 	 */
 	public boolean checkQueryPattern(String askQuery){
 		Boolean status = false;
+		
 		/* USED this way before but jena unable to parse SPARQL queries which involves querying from two graphs*/
 //		Query sparql = QueryFactory.create(askQuery);
 //		VirtuosoQueryExecution queryExecutor = VirtuosoQueryExecutionFactory.create(sparql, graphConnection);
-
+		log.info("ASK query " + askQuery);
 		QueryEngineHTTP queryEngine = new QueryEngineHTTP(sparqlEndpoint, askQuery);
 		status = queryEngine.execAsk();
 		return status;
