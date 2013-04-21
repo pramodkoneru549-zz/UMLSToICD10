@@ -6,14 +6,9 @@ import org.apache.commons.logging.LogFactory;
 import org.knoesis.umlstoicd10.models.Triple;
 
 import com.hp.hpl.jena.graph.Node;
-import com.hp.hpl.jena.query.Query;
-import com.hp.hpl.jena.query.QueryFactory;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.query.ResultSetFormatter;
+import com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP;
 
 import virtuoso.jena.driver.VirtGraph;
-import virtuoso.jena.driver.VirtuosoQueryExecution;
-import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
 
 public class VirtuosoDBHandler {
 	ConfigManager configParams;
@@ -21,6 +16,7 @@ public class VirtuosoDBHandler {
 	String virtuosoJdbcUrl;
 	String rdfGraphUrl;
 	private VirtGraph graphConnection;
+	private String sparqlEndpoint;
 	private static Log log = LogFactory.getLog(VirtuosoDBHandler.class);
 	
 	public VirtGraph getGraphConnection() {
@@ -40,6 +36,7 @@ public class VirtuosoDBHandler {
 //		rdfGraphUrl = configParams.getRdfGraphUrl();
 		username = configParams.getVirtuosoUmlsUsername();
 		password = configParams.getVirtuosoUmlsPassword();
+		sparqlEndpoint = configParams.getSparqlEndpoint();
 //		rdfGraphUrl = configParams.getVirtuosoUmlsOntologyGraph();
 		graphConnection = new VirtGraph (virtuosoJdbcUrl, username, password);
 	}
@@ -51,10 +48,12 @@ public class VirtuosoDBHandler {
 	 */
 	public boolean checkQueryPattern(String askQuery){
 		Boolean status = false;
-		Query sparql = QueryFactory.create(askQuery);
-		log.info(sparql.toString());
-		VirtuosoQueryExecution queryExecutor = VirtuosoQueryExecutionFactory.create(sparql, graphConnection);
-		status = queryExecutor.execAsk();
+		/* USED this way before but jena unable to parse SPARQL queries which involves querying from two graphs*/
+//		Query sparql = QueryFactory.create(askQuery);
+//		VirtuosoQueryExecution queryExecutor = VirtuosoQueryExecutionFactory.create(sparql, graphConnection);
+
+		QueryEngineHTTP queryEngine = new QueryEngineHTTP(sparqlEndpoint, askQuery);
+		status = queryEngine.execAsk();
 		return status;
 	}
 	
@@ -100,10 +99,32 @@ public class VirtuosoDBHandler {
 		
 		String testQuery = "PREFIX icd: <http://www.knoesis.org/icd10mapping/>"+
 						   "PREFIX ezdi: <http://www.ezdi.us/cardio.owl#>"+
-						   "SELECT * FROM NAMED <http://knoesis.wright.edu/umls2icd10/sample> { GRAPH <http://knoesis.wright.edu/umls2icd10/sample> {?x icd:suffering_with ezdi:C0259752.}}";	
+						   "SELECT * FROM NAMED <http://knoesis.wright.edu/umls2icd10/sample> { GRAPH <http://knoesis.wright.edu/umls2icd10/sample> {?x icd:suffering_with ezdi:C0259752.}}";
+		
+		String subQuery = "PREFIX icd: <http://www.knoesis.org/icd10mapping/>"+
+						  "PREFIX ezdi: <http://www.ezdi.us/cardio.owl#>"+
+						  "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"+
+						  "ASK "+
+						  "FROM <http://knoesis.wright.edu/umls2icd10/sample>"+
+						  "WHERE"+
+						  "{"+
+						  "{"+
+						  "{SELECT ?x FROM <http://knoesis.wright.edu/healthcare> WHERE"+ 
+						  "{ {?x rdfs:subClassOf ezdi:C0010674.}"+ 
+						  "UNION"+ 
+						  "{?x rdfs:subClassOf ezdi:C0035921.}"+ 
+       						"}"+
+							"}"+
+							"{icd:patient icd:suffering_with ?x.}"+
+							"}"+
+							"UNION"+
+							"{icd:patient icd:suffering_with ezdi:C0010674.}"+
+							"UNION"+
+							"{icd:patient icd:suffering_with ezdi:C0035921.}"+
+							"}";
 //		Triple triple = new Triple(sub, pre, obj);
 //		dbHandler.addTripleIntoVirtuoso(triple);
 //		System.out.println("Triple "+ triple+ " added");
-		System.out.println(dbHandler.checkQueryPattern(askQuery));
+		System.out.println(dbHandler.checkQueryPattern(subQuery));
 	}
 }

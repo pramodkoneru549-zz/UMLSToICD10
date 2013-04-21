@@ -113,7 +113,29 @@
 
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#E08 -->
 
-    <owl:Class rdf:about="&ICD10Initial;E08"/>
+    <owl:Class rdf:about="&ICD10Initial;E08">
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+ {
+  {SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE 
+       { {?x rdfs:subClassOf ezdi:C0010674.} 
+         UNION 
+         {?x rdfs:subClassOf ezdi:C0035921.} 
+       }
+  }
+  {icd:patient icd:suffering_with ?x.}
+ }
+ UNION
+ {icd:patient icd:suffering_with ezdi:C0010674.}
+ UNION
+ {icd:patient icd:suffering_with ezdi:C0035921.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+    </owl:Class>
     
 
 
@@ -123,23 +145,14 @@
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0259752.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0259752.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0259752.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0259752. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0259752.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -152,23 +165,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.0"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0020457.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0020457.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0020457.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0020457. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0020457.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
@@ -181,23 +185,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.0"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0009421.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0009421.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0009421.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0009421. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0009421.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -210,23 +205,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0220982.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0220982.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0220982.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0220982. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0220982.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -239,23 +225,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.1"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0009421.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0009421.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0009421.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0009421. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0009421.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
@@ -266,26 +243,17 @@ UNION
 
     <owl:Class rdf:about="&ICD10Initial;E08.11">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.1"/>
-        <rdfs:isDefinedBy rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0009421.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0009421.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0009421.}}
-}
-}</rdfs:isDefinedBy>
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0009421. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0009421.}
+}</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
@@ -297,23 +265,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0022658.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0022658.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0022658.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0022658. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0022658.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -326,23 +285,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.2"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0011881.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0011881.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0011881.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0011881. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0011881.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -355,23 +305,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.2"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0011881.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0011881.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0011881.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0011881. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0011881.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -384,23 +325,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.2"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0022658.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0022658.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0022658.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0022658. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0022658.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -413,23 +345,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0015397.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0015397.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0015397.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0015397. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0015397.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -442,23 +365,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0011884.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0011884.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0011884.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0011884. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0011884.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -471,23 +385,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.31"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -500,23 +405,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.31"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
@@ -529,23 +425,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C1561894.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C1561894.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C1561894.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C1561894. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C1561894.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -558,23 +445,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.32"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -587,23 +465,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.32"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
@@ -616,23 +485,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0730277.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0730277.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0730277.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0730277. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0730277.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -645,23 +505,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.33"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -674,23 +525,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.33"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
@@ -703,23 +545,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0730278.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0730278.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0730278.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0730278. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0730278.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -732,23 +565,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.34"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -761,23 +585,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.34"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
@@ -790,23 +605,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0154830.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0154830.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0154830.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0154830. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0154830.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -819,23 +625,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.35"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
@@ -848,23 +645,14 @@ UNION
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.35"/>
         <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
 PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-
-ASK
-FROM NAMED &lt;http://knoesis.wright.edu/healthcare&gt;
-FROM NAMED &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
 {
-{GRAPH &lt;http://knoesis.wright.edu/healthcare&gt; {?x rdfs:subClassOf ezdi:C0271051.}}
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
-UNION
-{GRAPH &lt;http://knoesis.wright.edu/umls2icd10/sample&gt; {
-      {icd:patient icd:suffering_with ?x.}
-      UNION
-      {icd:patient icd:suffering_with ezdi:C0271051.}}
-}
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0271051. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0271051.}
 }</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
     </owl:Class>
@@ -875,7 +663,17 @@ UNION
 
     <owl:Class rdf:about="&ICD10Initial;E08.36">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
-        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0011876&gt;.}</rdfs:comment>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0011876. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0011876.}
+}</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     
@@ -885,7 +683,17 @@ UNION
 
     <owl:Class rdf:about="&ICD10Initial;E08.39">
         <rdfs:subClassOf rdf:resource="&ICD10Initial;E08.3"/>
-        <rdfs:comment rdf:datatype="&rdfs;Literal">ASK { &lt;http://www.knoesis.org/icd10mapping/patient&gt; &lt;http://www.knoesis.org/icd10mapping/suffering_with&gt; &lt;http://www.knoesis.org/icd10mapping/umls/c0015397&gt;.}</rdfs:comment>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0015397. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0015397.}
+}</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
     </owl:Class>
     

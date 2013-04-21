@@ -54,7 +54,7 @@ public class IcdCodeDecoder {
 		boolean conditionsSatisfied = false;
 		boolean shouldPatternExist = ontology.getBooleanConditionForSparqlQuery(clazz);
 		String sparqlQuery = ontology.getSparqlQueryFromComment(clazz);
-		
+		log.info("Entered this class "+ clazz.toString());
 		/* Querying virtuoso to check if the pattern exists*/
 		boolean patternAvailability = dbHandler.checkQueryPattern(sparqlQuery);
 		if(patternAvailability == shouldPatternExist)
@@ -63,7 +63,14 @@ public class IcdCodeDecoder {
 		return conditionsSatisfied;
 	}
 	
-	public void getICD10Codes(String startingClassCode){
+	/**
+	 * This method, given the icd code of the starting class that we get from the index,
+	 * traverses the tree (ontology here) checks for all the conditions in each and every class
+	 * and returns the billable code (i.e., leaf node here).
+	 * @param startingClassCode
+	 * @return {@link OWLClass} Billable ICD10 class
+	 */
+	public OWLClass getICD10Codes(String startingClassCode){
 		
 		/* GETTING THE CLASS FROM STRING*/
 		OWLClass strtClazz = ontology.getClass(startingClassCode);
@@ -72,9 +79,10 @@ public class IcdCodeDecoder {
 		if(startClsCond){
 			/* Checking if it is the leaf node*/
 			while(!ontology.isLeafNode(icdCodeClass)){
-				NodeSet<OWLClass> subClz = ontology.getSubClasses(strtClazz);
+				NodeSet<OWLClass> subClz = ontology.getSubClasses(icdCodeClass);
 				for(Node<OWLClass> node : subClz){
 					OWLClass clz = node.getRepresentativeElement();
+					log.info("Entered the following class "+ clz.toString());
 					if(satisfiedClassCond(clz))
 					{
 						icdCodeClass = clz;
@@ -84,10 +92,10 @@ public class IcdCodeDecoder {
 				/* This means that it has checked all the subclasses and none of them satisfies the cond*/
 				if(strtClazz.equals(icdCodeClass))
 					break;
-				else
-					System.out.println("This the icdcode for this class: " + icdCodeClass.toString());
 			}
+			System.out.println("This is the billable ICD Code " + icdCodeClass.toString());
 		}
+		return icdCodeClass;
 	}
 	
 	public List<String> getPossibleIcdCodes() {
@@ -100,6 +108,6 @@ public class IcdCodeDecoder {
 	
 	public static void main(String[] args) {
 		IcdCodeDecoder decoder = new IcdCodeDecoder();
-		decoder.process("E08.0");
+		decoder.process("E08");
 	}
 }

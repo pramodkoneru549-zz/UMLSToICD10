@@ -57,16 +57,17 @@ public class ConfigManager {
 		return prop.getProperty("virtuoso.umlsontology.jdbc");
 	}
 	
-	public String getVirtuosoUmlsOntologyGraph(){
-		return prop.getProperty("virtuoso.umlsontology.graph");
-	}
-	
 	public String getVirtuosoUmlsUsername(){
 		return prop.getProperty("virtuoso.umls.username");
 	}
 	
 	public String getVirtuosoUmlsPassword(){
 		return prop.getProperty("virtuoso.umls.password");
+	}
+	
+	/** FIXME Think of better name here	 */
+	public String getSparqlEndpoint(){
+		return prop.getProperty("virtuoso.umlsontology.sparqlEndpoint");
 	}
 	
 	public static void main(String[] args) {

@@ -112,7 +112,7 @@ public class OntologyLoader {
 					sparqlQuery = sparqlQueryLiteral.getLiteral();
 				}
 			else
-				log.error("Please check the class there is no comments annotation");
+				log.error("Please check the class there is no comments annotation in this class " + clazz.toString());
 		} else
 			log.error("No such class in this ontology -- Please check");
 		return sparqlQuery;
