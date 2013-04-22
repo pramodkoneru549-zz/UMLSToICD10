@@ -1174,6 +1174,202 @@ WHERE
     
 
 
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I10 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I10">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0085580. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0085580.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I11 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I11">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0152105. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0152105.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I11.0 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I11.0">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I11"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0018801. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0018801.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I11.9 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I11.9">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I11"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C0018801. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C0018801.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">false</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I12 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I12">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C1719463. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C1719463.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I12.0 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I12.0">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I12"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C1719462. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C1719462.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I12.9 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I12.9">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I12"/>
+        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
+PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
+WHERE
+{
+  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C1719460. }}
+  {icd:patient icd:suffering_with ?x.}}
+  UNION
+  {icd:patient icd:suffering_with ezdi:C1719460.}
+}</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I13 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I13">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I13.0 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I13.0">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I13"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I13.1 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I13.1">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I13"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I13.10 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I13.10">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I13.1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I13.11 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I13.11">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I13.1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I13.2 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I13.2">
+        <rdfs:subClassOf rdf:resource="&ICD10Initial;I13"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#I15 -->
+
+    <owl:Class rdf:about="&ICD10Initial;I15">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <owl:Class rdf:about="&owl;Thing"/>
