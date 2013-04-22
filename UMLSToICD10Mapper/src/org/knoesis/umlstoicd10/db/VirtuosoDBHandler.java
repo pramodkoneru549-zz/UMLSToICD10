@@ -75,6 +75,16 @@ public class VirtuosoDBHandler {
 		graphConnection.add(jenaTriple);
 	}
 	
+	/**
+	 * This method is used to delete the triples in the patient graph -- virtuoso
+	 */
+	public void clearPatientGraph(){
+		String clearQuery = "CLEAR <"+ configParams.getPatientGraphUrl()+">";
+		QueryEngineHTTP queryEngine = new QueryEngineHTTP(sparqlEndpoint, clearQuery);
+		queryEngine.execSelect();
+		System.out.println("Patient Graph Deleted!!");
+	}
+	
 	public static void main(String[] args) {
 		VirtuosoDBHandler dbHandler = new VirtuosoDBHandler();
 //		<http://ww.knoesis.org/icd10mapping/patient> <http://ww.knoesis.org/icd10mapping/suffering_with> <http://ww.knoesis.org/icd10mapping/umls/c03>
@@ -131,6 +141,7 @@ public class VirtuosoDBHandler {
 //		Triple triple = new Triple(sub, pre, obj);
 //		dbHandler.addTripleIntoVirtuoso(triple);
 //		System.out.println("Triple "+ triple+ " added");
-		System.out.println(dbHandler.checkQueryPattern(subQuery));
+//		System.out.println(dbHandler.checkQueryPattern(subQuery));
+		dbHandler.clearPatientGraph();
 	}
 }

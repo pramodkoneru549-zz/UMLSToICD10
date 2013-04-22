@@ -42,7 +42,7 @@ public class ConfigManager {
 	}
 
 	public String getPatientGraphUrl() {
-		return prop.getProperty("virtuoso.rdfGraph");
+		return prop.getProperty("virtuoso.patientgraph");
 	}
 	
 	public String getInMemoryGraphName(){
