@@ -69,48 +69,6 @@
     
 
 
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#C0010481 -->
-
-    <owl:Class rdf:about="&ICD10Initial;C0010481">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;UMLS"/>
-        <owl:disjointWith rdf:resource="&ICD10Initial;Gestational_Diabetes"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#C0011849 -->
-
-    <owl:Class rdf:about="&ICD10Initial;C0011849">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;UMLS"/>
-        <owl:disjointWith rdf:resource="&ICD10Initial;Gestational_Diabetes"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#C0020538 -->
-
-    <owl:Class rdf:about="&ICD10Initial;C0020538">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;UMLS"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#Coma -->
-
-    <owl:Class rdf:about="&ICD10Initial;Coma">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;UMLS"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#Diabetic_Nephropathy -->
-
-    <owl:Class rdf:about="&ICD10Initial;Diabetic_Nephropathy">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;UMLS"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#E08 -->
 
     <owl:Class rdf:about="&ICD10Initial;E08">
@@ -974,42 +932,6 @@ WHERE
     
 
 
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#Gestational_Diabetes -->
-
-    <owl:Class rdf:about="&ICD10Initial;Gestational_Diabetes">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;UMLS"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#Hyperosmolarity -->
-
-    <owl:Class rdf:about="&ICD10Initial;Hyperosmolarity">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;UMLS"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#Patient -->
-
-    <owl:Class rdf:about="&ICD10Initial;Patient">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;People"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#People -->
-
-    <owl:Class rdf:about="&ICD10Initial;People"/>
-    
-
-
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#UMLS -->
-
-    <owl:Class rdf:about="&ICD10Initial;UMLS"/>
-    
-
-
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <owl:Class rdf:about="&owl;Thing"/>
@@ -1029,16 +951,13 @@ WHERE
 
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#Diabetic_nephropathy -->
 
-    <owl:NamedIndividual rdf:about="&ICD10Initial;Diabetic_nephropathy">
-        <rdf:type rdf:resource="&ICD10Initial;Diabetic_Nephropathy"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="&ICD10Initial;Diabetic_nephropathy"/>
     
 
 
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#c0010481 -->
 
     <owl:Thing rdf:about="&ICD10Initial;c0010481">
-        <rdf:type rdf:resource="&ICD10Initial;C0010481"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
@@ -1047,7 +966,6 @@ WHERE
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#c0011849 -->
 
     <owl:Thing rdf:about="&ICD10Initial;c0011849">
-        <rdf:type rdf:resource="&ICD10Initial;C0011849"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <dueTo rdf:resource="&ICD10Initial;c0010481"/>
     </owl:Thing>
@@ -1057,7 +975,6 @@ WHERE
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#c0020538 -->
 
     <owl:Thing rdf:about="&ICD10Initial;c0020538">
-        <rdf:type rdf:resource="&ICD10Initial;C0020538"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <hasCondition rdf:resource="&ICD10Initial;hyperosmolarity"/>
     </owl:Thing>
@@ -1066,9 +983,7 @@ WHERE
 
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#coma -->
 
-    <owl:NamedIndividual rdf:about="&ICD10Initial;coma">
-        <rdf:type rdf:resource="&ICD10Initial;Coma"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="&ICD10Initial;coma"/>
     
 
 
@@ -1630,9 +1545,7 @@ WHERE
 
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#gestational_diabetes -->
 
-    <owl:NamedIndividual rdf:about="&ICD10Initial;gestational_diabetes">
-        <rdf:type rdf:resource="&ICD10Initial;Gestational_Diabetes"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="&ICD10Initial;gestational_diabetes"/>
     
 
 
@@ -1644,9 +1557,7 @@ WHERE
 
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#hyperosmolarity -->
 
-    <owl:NamedIndividual rdf:about="&ICD10Initial;hyperosmolarity">
-        <rdf:type rdf:resource="&ICD10Initial;Hyperosmolarity"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="&ICD10Initial;hyperosmolarity"/>
     
 
 
@@ -1659,7 +1570,6 @@ WHERE
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#patient1 -->
 
     <owl:Thing rdf:about="&ICD10Initial;patient1">
-        <rdf:type rdf:resource="&ICD10Initial;Patient"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <hasCondition rdf:resource="&ICD10Initial;c0011849"/>
         <hasCondition rdf:resource="&ICD10Initial;gestational_diabetes"/>
@@ -1670,7 +1580,6 @@ WHERE
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#patient2 -->
 
     <owl:NamedIndividual rdf:about="&ICD10Initial;patient2">
-        <rdf:type rdf:resource="&ICD10Initial;Patient"/>
         <hasCondition rdf:resource="&ICD10Initial;gestational_diabetes"/>
     </owl:NamedIndividual>
 </rdf:RDF>

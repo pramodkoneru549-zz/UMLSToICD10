@@ -72,7 +72,7 @@ public class PatientGraphLoader {
 		
 		/*Trimming the elements of the array*/
 		for (int i = 0; i < wordArray.length; i++) {
-			wordSet.add(wordArray[i].trim());
+			wordSet.add(wordArray[i].trim().toLowerCase());
 		}
 		return wordSet;
 	}
