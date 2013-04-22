@@ -8,6 +8,7 @@ public class IndexTableHolder {
 	
 	public IndexTableHolder() {	
 		setIcdCodesIndex(new HashMap<String, String>());
+		loadIndex();
 	}
 	
 	public void loadIndex(){
@@ -15,8 +16,8 @@ public class IndexTableHolder {
 		icdCodesIndex.put("chemical induced diabetes mellitus", "E09");
 		icdCodesIndex.put("type 1 diabetes mellitus", "E10");
 		icdCodesIndex.put("type 2 diabetes mellitus", "E11");
-		icdCodesIndex.put("Atherosclerosis", "I70");
-		
+		icdCodesIndex.put("atherosclerosis", "I70");
+		icdCodesIndex.put("hypertensive chronic kidney disease", "I12");
 	}
 	
 	public Map<String, String> getIcdCodesIndex() {

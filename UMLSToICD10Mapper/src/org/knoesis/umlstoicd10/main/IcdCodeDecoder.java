@@ -1,13 +1,19 @@
 package org.knoesis.umlstoicd10.main;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hsqldb.lib.HashSet;
 import org.knoesis.umlstoicd10.db.VirtuosoDBHandler;
 import org.knoesis.umlstoicd10.ontology.OntologyLoader;
 import org.knoesis.umlstoicd10.utils.ConfigManager;
+import org.knoesis.umlstoicd10.utils.IndexTableHolder;
+import org.knoesis.umlstoicd10.utils.PatientGraphLoader;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -23,8 +29,10 @@ public class IcdCodeDecoder {
 	private List<String> possibleIcdCodes;
 	ConfigManager configParams;
 	OntologyLoader ontology;
-	VirtuosoDBHandler dbHandler;
+	static VirtuosoDBHandler dbHandler;
+	static IndexTableHolder indexHolder;
 	private static Log log = LogFactory.getLog(IcdCodeDecoder.class);
+	
 	
 	/** DEFAULT Constructor intializes ontology loader and dbHandler*/
 	public IcdCodeDecoder() {
@@ -32,11 +40,25 @@ public class IcdCodeDecoder {
 		File ontologyFile = new File(configParams.getOntologyFileLocation());
 		ontology = new OntologyLoader(ontologyFile);
 		dbHandler = new VirtuosoDBHandler();
+		indexHolder = new IndexTableHolder();
 	}
 	
-	public void process(String strtCode){
-		getICD10Codes(strtCode);
+	public void process(){
+		PatientGraphLoader graphLoader = new PatientGraphLoader(configParams,dbHandler);
+		graphLoader.load();
+		List<String> icdCodes = new ArrayList<String>();
+		Set<String> chiefComplaints = graphLoader.getChiefComplaints();
+		Map<String, String> index = indexHolder.getIcdCodesIndex();
+		for(String chiefComplaint : chiefComplaints){
+			if(index.containsKey(chiefComplaint)){
+				System.out.println(chiefComplaint +"--"+index.get(chiefComplaint));
+				icdCodes.add(getICD10Codes(index.get(chiefComplaint)).toString());
+			}
+		}
+		dbHandler.clearPatientGraph();
+//		getICD10Codes(strtCode);
 //		System.out.println(satisfiedClassCond(owlClazz));
+		System.out.println(icdCodes.toString());
 	}
 	
 	/**
@@ -92,7 +114,6 @@ public class IcdCodeDecoder {
 				if(strtClazz.equals(icdCodeClass))
 					break;
 			}
-			System.out.println("This is the billable ICD Code " + icdCodeClass.toString());
 		}
 		return icdCodeClass;
 	}
@@ -107,6 +128,6 @@ public class IcdCodeDecoder {
 	
 	public static void main(String[] args) {
 		IcdCodeDecoder decoder = new IcdCodeDecoder();
-		decoder.process("E08");
+		decoder.process();
 	}
 }

@@ -19,12 +19,23 @@ import org.knoesis.umlstoicd10.models.Triple;
 public class PatientGraphLoader {
 	ConfigManager configParams;
 	String patientTripleFileLocation;
-	static VirtuosoDBHandler dbHandler;
+	VirtuosoDBHandler dbHandler;
 	private Set<String> chiefComplaints;
 	
 	public PatientGraphLoader() {
 		configParams = new ConfigManager();
 		patientTripleFileLocation = configParams.getTripleFileLocation();
+		dbHandler = new VirtuosoDBHandler();
+	}
+	
+	public PatientGraphLoader(ConfigManager configParams,VirtuosoDBHandler dbHandler){
+		this.configParams = configParams;
+		patientTripleFileLocation = configParams.getTripleFileLocation();
+		this.dbHandler = dbHandler;
+	}
+	
+	public PatientGraphLoader(String tripleFileLocation){
+		patientTripleFileLocation = tripleFileLocation;
 		dbHandler = new VirtuosoDBHandler();
 	}
 	
@@ -57,6 +68,7 @@ public class PatientGraphLoader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println(chiefComplaints);
 		System.out.println("Completed loading the file");
 	}
 	
