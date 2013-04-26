@@ -1712,26 +1712,6 @@ WHERE
     
 
 
-    <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#N18.9 -->
-
-    <owl:Class rdf:about="&ICD10Initial;N18.9">
-        <rdfs:subClassOf rdf:resource="&ICD10Initial;N18"/>
-        <rdfs:comment rdf:datatype="&rdfs;Literal">PREFIX icd: &lt;http://www.knoesis.org/icd10mapping/&gt;
-PREFIX ezdi: &lt;http://www.ezdi.us/cardio.owl#&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-ASK FROM &lt;http://knoesis.wright.edu/umls2icd10/sample&gt;
-WHERE
-{
-  {{SELECT ?x FROM &lt;http://knoesis.wright.edu/healthcare&gt; WHERE { ?x rdfs:subClassOf ezdi:C1561643. }}
-  {icd:patient icd:suffering_with ?x.}}
-  UNION
-  {icd:patient icd:suffering_with ezdi:C1561643.}
-}</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="&xsd;boolean">true</rdfs:isDefinedBy>
-    </owl:Class>
-    
-
-
     <!-- http://www.knoesis.org/ontologies/2013/0/ICD10Initial.owl#N19 -->
 
     <owl:Class rdf:about="&ICD10Initial;N19">
